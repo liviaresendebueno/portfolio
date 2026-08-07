@@ -10,31 +10,166 @@
 </head>
 
 <body>
-    <header class="bordas header">
-        <nav class="meu-menu nav">
-            <!-- <button class="btn-menu" aria-label="Abrir Menu" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
-                <span class="hamburguer"></span>
-            </button> -->
-            <input type="checkbox" id="checkbox" class="checkbox">
-            <label for="checkbox" class="label-menu">Menu <span class="hamburguer"></span></label>
-            <ul class="menu" id="menu" role="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Projetos</a></li>
-                <li><a href="#">Sobre Mim</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
+    <header>
+        <!-- Advanced Navigation Bar -->
+        <nav class="navbar-container">
+            <div class="navbar">
+                <!-- Brand/Logo -->
+                <a href="#" class="navbar-brand">
+                    <span class="brand-text">NeoNav</span>
+                </a>
+
+                <!-- Navigation Links -->
+                <ul class="navbar-nav" id="navbarNav">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">
+                            <svg class="nav-icon" viewBox="0 0 24 24">
+                                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                            </svg>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="12" y1="16" x2="12" y2="12"></line>
+                                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#services" class="nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                            <span>Services</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#portfolio" class="nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                <path d="M16 3h6v4"></path>
+                                <path d="m22 7-10-4-10 4"></path>
+                            </svg>
+                            <span>Portfolio</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link">
+                            <svg class="nav-icon" viewBox="0 0 24 24">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-toggle" id="mobileToggle">
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </button>
+            </div>
         </nav>
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <a href="#" class="mobile-menu-brand">
+                    <span class="brand-text">NeoNav</span>
+                </a>
+                <button class="mobile-menu-close" id="mobileMenuClose">
+                    <span>×</span>
+                </button>
+            </div>
+
+            <ul class="mobile-menu-nav">
+                <li class="mobile-menu-item">
+                    <a href="#home" class="mobile-menu-link active">
+                        <svg class="mobile-menu-icon" viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#about" class="mobile-menu-link">
+                        <svg class="mobile-menu-icon" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="12" y1="16" x2="12" y2="12"></line>
+                            <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#services" class="mobile-menu-link">
+                        <svg class="mobile-menu-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <span>Services</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#portfolio" class="mobile-menu-link">
+                        <svg class="mobile-menu-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 3h6v4"></path>
+                            <path d="m22 7-10-4-10 4"></path>
+                        </svg>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#contact" class="mobile-menu-link">
+                        <svg class="mobile-menu-icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Contact</span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
     </header>
+
+
+
+
     <main>
-        <section class="bordas">
-            <h1>Lívia Bueno</h1>
+        <section class="bordas home-container" id="home">
+            <h1 id="nome">Lívia Bueno</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-            <img src="" alt="">
-            <img src="" alt="">
-            <button></button>
+            <div>
+                <img src="imgs/javascript.svg" alt="JavaScript">
+                <img src="imgs/java.svg" alt="Java">
+            </div>
+            <button class="scroll-button" type="button" aria-label="Ir para a seção de projetos">
+                <span class="scroll-button-circle"></span>
+            </button>
             <p>Scrool down to see more projects</p>
         </section>
-        <section class="bordas">
+
+        <section id="projetos" class="bordas">
             <h2>Projetos</h2><span>número de projetos aqui</span>
             <div>
                 <img src="" alt="">
