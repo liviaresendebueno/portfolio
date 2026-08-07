@@ -157,3 +157,15 @@ if (scrollButton && projectsSection) {
         });
     });
 }
+
+const navbar = document.querySelector('.navbar');
+
+function ajustarNavbar() {
+    if (window.innerWidth < 992) {
+        navbar.classList.remove('navbar');
+    }
+}
+
+ajustarNavbar();
+
+window.addEventListener('resize', ajustarNavbar);

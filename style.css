@@ -50,13 +50,6 @@ header {
     width: 100%;
 }
 
-/* Centralização padrão das seções */
-
-/* .bordas {
-    width: min(1200px, calc(100% - 40px));
-    margin-inline: auto;
-} */
-
 
 /* ==================== CONTAINER DO MENU ==================== */
 
@@ -166,41 +159,6 @@ header {
         0 18px 40px rgba(0, 0, 0, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
-
-
-/* ==================== LOGO ==================== */
-
-.navbar-brand {
-    grid-column: 1;
-
-    justify-self: start;
-
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--white);
-
-    font-size: 1.4rem;
-    font-weight: 700;
-
-    white-space: nowrap;
-}
-
-.brand-text {
-    background: linear-gradient(135deg,
-            #ffffff,
-            #f0f0f0);
-
-    background-clip: text;
-    -webkit-background-clip: text;
-
-    color: transparent;
-    -webkit-text-fill-color: transparent;
-
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
 
 /* ==================== MENU DESKTOP ==================== */
 
@@ -505,17 +463,6 @@ header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
 }
 
-.mobile-menu-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-
-    color: var(--white);
-
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
 .mobile-menu-close {
     width: 48px;
     height: 48px;
@@ -616,111 +563,6 @@ header {
     stroke-linejoin: round;
 }
 
-
-/* ==================== DESKTOP ==================== */
-
-@media (min-width: 993px) {
-    .navbar-nav {
-        display: flex !important;
-
-        opacity: 1 !important;
-        visibility: visible !important;
-
-        transform: none !important;
-    }
-}
-
-
-/* ==================== TABLET E MOBILE ==================== */
-
-@media (max-width: 992px) {
-    .navbar-container {
-        width: calc(100% - 30px);
-
-        margin: 20px auto 0;
-
-        top: 20px;
-    }
-
-    .navbar {
-        grid-template-columns: minmax(0, 1fr) auto;
-        gap: 10px;
-
-        padding: 12px 20px;
-    }
-
-    .navbar-brand {
-        grid-column: 1;
-
-        justify-self: start;
-    }
-
-    .navbar-nav {
-        display: none !important;
-    }
-
-    .mobile-toggle {
-        grid-column: 2;
-
-        display: flex !important;
-
-        justify-self: end;
-    }
-
-    .brand-text {
-        font-size: 1.2rem;
-    }
-
-    /* .bordas {
-        width: calc(100% - 30px);
-    } */
-}
-
-
-/* ==================== CELULARES PEQUENOS ==================== */
-
-@media (max-width: 480px) {
-    .navbar-container {
-        width: calc(100% - 20px);
-
-        margin: 15px auto 0;
-
-        top: 15px;
-    }
-
-    .navbar {
-        min-height: 56px;
-
-        padding: 10px 15px;
-    }
-
-    .navbar-brand {
-        gap: 8px;
-    }
-
-    .brand-text {
-        font-size: 1.1rem;
-    }
-
-    .mobile-menu-header {
-        padding: 22px 20px 18px;
-    }
-
-    .mobile-menu-nav {
-        padding: 30px 20px;
-    }
-
-    .mobile-menu-link {
-        padding: 18px 20px;
-
-        font-size: 1rem;
-    }
-
-    /* .bordas {
-        width: calc(100% - 20px);
-    }
-} */
-
 #nome {
     text-align: center;
     font-size: clamp(3rem, 10vw, 9rem);
@@ -738,16 +580,16 @@ header {
     justify-content: center;
     position: relative;
     flex-direction: column;
-    margin: 0 15px;
+    padding: 0 15px;
 }
 
-.home-container p{
+.home-container p {
     text-align: center;
 }
 
 .scroll-button {
-    width: clamp(70px, 8vw, 96px);
-    height: clamp(120px, 14vw, 160px);
+    width: clamp(35px, 8vw, 50px);
+    height: clamp(60px, 14vw, 90px);
 
     position: relative;
 
@@ -756,7 +598,7 @@ header {
     justify-content: center;
 
     margin: 40px auto 0;
-    padding: 0 0 18px;
+    padding: 0 0 10px;
 
     background: transparent;
 
@@ -781,7 +623,7 @@ header {
 }
 
 .scroll-button-circle {
-    width: clamp(42px, 5vw, 56px);
+    width: clamp(25px, 5vw, 30px);
     aspect-ratio: 1;
 
     display: block;
