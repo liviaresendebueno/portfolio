@@ -163,9 +163,102 @@ const navbar = document.querySelector('.navbar');
 function ajustarNavbar() {
     if (window.innerWidth < 992) {
         navbar.classList.remove('navbar');
+    } else {
+        navbar.classList.add('navbar');
     }
 }
 
 ajustarNavbar();
 
 window.addEventListener('resize', ajustarNavbar);
+
+const hero = document.querySelector('.home-container');
+
+function criarEstrelas() {
+
+    // cria a camada que vai receber as estrelas
+    const starsContainer = document.createElement('div');
+
+    starsContainer.classList.add('stars');
+
+    hero.appendChild(starsContainer);
+
+
+    // quantidade de estrelas
+    const quantidade = 180;
+
+
+    for (let i = 0; i < quantidade; i++) {
+
+        const estrela = document.createElement('span');
+
+        estrela.classList.add('star');
+
+
+        // posição horizontal aleatória
+        const x = Math.random() * 100;
+
+        // posição vertical aleatória
+        const y = Math.random() * 100;
+
+
+        // tamanho entre aproximadamente 0.5px e 2px
+        const tamanho = Math.random() * 1.5 + 0.5;
+
+
+        // transparência
+        const opacity = Math.random() * 0.6 + 0.25;
+
+
+        // duração diferente para cada estrela
+        const duration = Math.random() * 4 + 3;
+
+
+        // atraso diferente
+        const delay = Math.random() * 5;
+
+
+        estrela.style.left = `${x}%`;
+        estrela.style.top = `${y}%`;
+
+        estrela.style.setProperty(
+            '--size',
+            `${tamanho}px`
+        );
+
+        estrela.style.setProperty(
+            '--opacity',
+            opacity
+        );
+
+        estrela.style.setProperty(
+            '--duration',
+            `${duration}s`
+        );
+
+        estrela.style.setProperty(
+            '--delay',
+            `-${delay}s`
+        );
+
+
+        /*
+           Aproximadamente 8% das estrelas
+           terão um brilho um pouco maior
+        */
+
+        if (Math.random() < 0.08) {
+
+            estrela.classList.add('glow');
+
+            estrela.style.setProperty(
+                '--size',
+                `${Math.random() * 1.5 + 1.5}px`
+            );
+        }
+
+
+        starsContainer.appendChild(estrela);
+    }
+}
+criarEstrelas();
