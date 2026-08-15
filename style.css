@@ -746,7 +746,7 @@ header {
 
 
 /* CONTEÚDO */
-.home-container>*:not(.hero-blobs) {
+.home-container>*:not(.hero-blobs):not(.stars) {
     position: relative;
     z-index: 2;
 }
