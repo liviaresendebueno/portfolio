@@ -14,7 +14,7 @@ function criarEstrelas() {
     hero.appendChild(starsContainer);
 
     // quantidade de estrelas
-    const quantidade = 100;
+    const quantidade = 600;
 
     for (let i = 0; i < quantidade; i++) {
 
