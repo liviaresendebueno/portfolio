@@ -1,0 +1,233 @@
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    width: 100%;
+
+    padding:
+        40px
+        clamp(20px, 4vw, 60px);
+
+    background: var(--bg-dark);
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.footer-container {
+    width: min(100%, 1400px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(40px, 5vw, 65px)
+        clamp(25px, 5vw, 70px);
+
+    position: relative;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at 10% 100%,
+            rgba(120, 62, 210, 0.22),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(156, 92, 222, 0.10),
+            transparent 32%
+        ),
+
+        linear-gradient(
+            145deg,
+            rgba(46, 34, 78, 0.72),
+            rgba(20, 19, 38, 0.88)
+        );
+
+    border:
+        1px solid
+        rgba(171, 110, 255, 0.45);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+/* brilho decorativo */
+
+.footer-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -130px;
+    bottom: -200px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(126, 70, 219, 0.28);
+
+    filter: blur(80px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.footer-header {
+    position: relative;
+
+    z-index: 1;
+
+    margin-bottom:
+        clamp(28px, 4vw, 40px);
+}
+
+
+.footer-header h2 {
+    margin-bottom: 8px;
+
+    color: var(--text-primary);
+
+    font-size:
+        clamp(1.6rem, 3vw, 2.5rem);
+
+    font-weight: 600;
+}
+
+
+.footer-header p {
+    color: var(--text-secondary);
+
+    font-size:
+        clamp(0.85rem, 1vw, 1rem);
+}
+
+
+/* =========================================
+   CONTATOS
+========================================= */
+
+.footer-contatos {
+    position: relative;
+
+    z-index: 1;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap:
+        clamp(12px, 2vw, 22px);
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+.footer-link {
+    min-width: 180px;
+    min-height: 58px;
+
+    padding:
+        13px
+        28px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    color: var(--text-primary);
+
+    font-size: 0.95rem;
+    font-weight: 500;
+
+    background:
+        rgba(34, 29, 55, 0.45);
+
+    border:
+        1px solid
+        rgba(167, 108, 255, 0.75);
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.footer-link svg {
+    width: 22px;
+    height: 22px;
+
+    flex-shrink: 0;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.8;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.footer-link:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(113, 69, 170, 0.22);
+
+    border-color:
+        var(--purple-light);
+
+    box-shadow:
+        0 10px 30px
+        rgba(113, 65, 180, 0.20);
+}
+
+
+.footer-link:hover svg {
+    transform: scale(1.1);
+}

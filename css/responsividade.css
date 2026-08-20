@@ -1,0 +1,328 @@
+/* ==================== DESKTOP ==================== */
+
+@media (min-width: 993px) {
+    .navbar-nav {
+        display: flex !important;
+
+        opacity: 1 !important;
+        visibility: visible !important;
+
+        transform: none !important;
+    }
+}
+
+
+/* ==================== TABLET E MOBILE ==================== */
+
+@media (max-width: 992px) {
+    .navbar-container {
+        width: calc(100% - 30px);
+
+        margin: 20px auto 0;
+
+        top: 20px;
+    }
+
+    .navbar {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+
+        padding: 12px 20px;
+    }
+
+    .navbar-brand {
+        grid-column: 1;
+
+        justify-self: start;
+    }
+
+    .navbar-nav {
+        display: none !important;
+    }
+
+    .mobile-toggle {
+        grid-column: 2;
+
+        display: flex !important;
+
+        justify-self: end;
+    }
+
+    .brand-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* ==================== CELULARES PEQUENOS ==================== */
+
+@media (max-width: 480px) {
+    .navbar-container {
+        width: calc(100% - 20px);
+
+        margin: 15px auto 0;
+
+        top: 15px;
+    }
+
+    .navbar {
+        min-height: 56px;
+
+        padding: 10px 15px;
+    }
+
+    .navbar-brand {
+        gap: 8px;
+    }
+
+    .brand-text {
+        font-size: 1.1rem;
+    }
+
+    .mobile-menu-header {
+        padding: 22px 20px 18px;
+    }
+
+    .mobile-menu-nav {
+        padding: 30px 20px;
+    }
+
+    .mobile-menu-link {
+        padding: 18px 20px;
+
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .projetos-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .projetos-container {
+        grid-template-columns: 1fr;
+    }
+
+    .projeto-imagem {
+        height: 230px;
+    }
+}
+
+/* =========================================
+   SOBRE MIM - TABLET
+========================================= */
+
+@media (max-width: 992px) {
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .sobre-texto p {
+        max-width: 750px;
+    }
+
+    .tecnologias-card {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================
+   SOBRE MIM - MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    #sobre-mim {
+        padding:
+            70px 20px;
+    }
+
+    .sobre-container {
+        padding: 28px 22px;
+
+        border-radius: 22px;
+    }
+
+    .sobre-title {
+        margin-bottom: 24px;
+    }
+
+    .tecnologias-card {
+        padding: 24px 20px;
+    }
+
+    .tecnologias-lista {
+        gap: 10px;
+    }
+
+    .tecnologia {
+        padding: 8px 15px;
+    }
+
+
+    /* EXPERIÊNCIA */
+
+    .experiencia {
+        margin-top: 55px;
+    }
+
+    .experiencia-card {
+        grid-template-columns:
+            70px minmax(0, 1fr);
+
+        gap: 18px;
+    }
+
+    .experiencia-logo {
+        width: 70px;
+    }
+
+    .experiencia-header {
+        flex-direction: column;
+
+        gap: 6px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES PEQUENOS
+========================================= */
+
+@media (max-width: 480px) {
+
+    #sobre-mim {
+        padding:
+            60px 15px;
+    }
+
+    .sobre-container {
+        padding:
+            25px 18px;
+    }
+
+    .tecnologias-header {
+        margin-bottom: 22px;
+    }
+
+    .tecnologias-icon {
+        width: 46px;
+        height: 46px;
+    }
+
+    .tecnologia {
+        font-size: 0.82rem;
+    }
+
+
+    /* experiência vira vertical */
+
+    .experiencia-card {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+    .experiencia-logo {
+        width: 65px;
+    }
+
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+@media (max-width: 700px) {
+
+    footer {
+        padding:
+            30px 20px;
+    }
+
+
+    .footer-container {
+        padding:
+            45px 25px;
+
+        border-radius: 24px;
+    }
+
+
+    .footer-contatos {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+
+    .footer-link {
+        width: min(100%, 320px);
+
+        min-height: 55px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    footer {
+        padding:
+            20px 15px;
+    }
+
+
+    .footer-container {
+        padding:
+            40px 20px;
+
+        border-radius: 20px;
+    }
+
+
+    .footer-header {
+        margin-bottom: 28px;
+    }
+
+
+    .footer-link {
+        width: 100%;
+
+        min-width: 0;
+    }
+
+}
+
+@media (max-width: 992px) {
+
+    .navbar-container.scrolled {
+        top: 10px;
+    }
+
+
+    .navbar-container.scrolled .navbar-inner {
+        min-height: 54px;
+
+        background:
+            rgba(29, 25, 58, 0.72);
+
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+
+        border-color:
+            rgba(196, 154, 255, 0.20);
+
+        box-shadow:
+            0 15px 40px rgba(5, 5, 20, 0.18);
+    }
+
+}

@@ -1,0 +1,410 @@
+/* =========================================
+   HERO
+========================================= */
+
+.home-container {
+    width: 100%;
+    min-height: 95dvh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    isolation: isolate;
+
+    background: var(--degrade);
+}
+
+
+/* =========================================
+   CONTEÚDO PRINCIPAL
+========================================= */
+
+.home-container>*:not(.hero-blobs):not(.stars) {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =========================================
+   NOME
+========================================= */
+
+#nome {
+    margin-bottom: 10px;
+
+    text-align: center;
+
+    font-family: var(--sortsmill);
+
+    font-size:
+        clamp(3rem, 10vw, 9rem);
+
+    font-weight: 100;
+
+    line-height: 0.9;
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   SUBTÍTULO
+========================================= */
+
+.subtitle {
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    font-size:
+        clamp(14px,
+            calc(12px + 0.35vw),
+            18px);
+
+    line-height: 1.4;
+
+    color: var(--white);
+}
+
+
+/* =========================================
+   BLOCOS DE LUZ
+========================================= */
+
+.hero-blobs {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+/* BASE */
+
+.blob {
+    position: absolute;
+
+    display: block;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   ROSA PRINCIPAL
+========================================= */
+
+
+/* SUPERIOR DIREITA */
+
+.blob-top-right {
+    width: 50%;
+    height: 35%;
+
+    top: -16%;
+    right: -14%;
+
+    background: var(--blob-main);
+
+    opacity: 0.7;
+
+    filter: blur(140px);
+
+    transform: rotate(-150deg);
+}
+
+
+/* INFERIOR DIREITA */
+
+.blob-bottom-right {
+    width: 57%;
+    height: 65%;
+
+    right: -25%;
+    bottom: -23%;
+
+    background: var(--blob-main);
+
+    opacity: 0.8;
+
+    filter: blur(200px);
+}
+
+
+/* INFERIOR ESQUERDA */
+
+.blob-bottom-left {
+    width: 50%;
+    height: 55%;
+
+    left: -15%;
+    bottom: -22%;
+
+    background: var(--blob-main);
+
+    opacity: 0.8;
+
+    filter: blur(200px);
+}
+
+
+/* CENTRO INFERIOR */
+
+.blob-bottom-center {
+    width: 50%;
+    height: 18%;
+
+    left: 50%;
+    bottom: -10%;
+
+    transform: translateX(-50%);
+
+    background: var(--blob-main);
+
+    opacity: 0.8;
+
+    filter: blur(120px);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   LUZ CLARA
+========================================= */
+
+
+/* INFERIOR ESQUERDA */
+
+.blob-light-left {
+    width: 35%;
+    height: 35%;
+
+    left: -18%;
+    bottom: -18%;
+
+    background: var(--blob-light);
+
+    opacity: 0.6;
+
+    filter: blur(120px);
+}
+
+
+/* INFERIOR DIREITA */
+
+.blob-light-right {
+    width: 60%;
+    height: 60%;
+
+    right: -40%;
+    bottom: -40%;
+
+    background: var(--blob-light);
+
+    opacity: 0.6;
+
+    filter: blur(120px);
+}
+
+
+/* =========================================
+   ESTRELAS
+========================================= */
+
+.stars {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    overflow: hidden;
+
+    pointer-events: none;
+}
+
+
+.star {
+    position: absolute;
+
+    width: var(--size);
+    height: var(--size);
+
+    background: white;
+
+    border-radius: 50%;
+
+    opacity: var(--opacity);
+
+    animation:
+        star-twinkle var(--duration) ease-in-out infinite alternate;
+
+    animation-delay:
+        var(--delay);
+}
+
+
+/* ESTRELAS COM BRILHO */
+
+.star.glow {
+    box-shadow:
+        0 0 4px rgba(255, 255, 255, 0.5),
+        0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================
+   ANIMAÇÃO DAS ESTRELAS
+========================================= */
+
+@keyframes star-twinkle {
+
+    from {
+        opacity:
+            calc(var(--opacity) * 0.4);
+
+        transform:
+            scale(0.8);
+    }
+
+    to {
+        opacity:
+            var(--opacity);
+
+        transform:
+            scale(1.15);
+    }
+
+}
+
+
+/* =========================================
+   BOTÃO DE SCROLL
+========================================= */
+
+.scroll-button {
+    width:
+        clamp(35px, 8vw, 50px);
+
+    height:
+        clamp(60px, 14vw, 90px);
+
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+
+    margin:
+        40px auto 20px;
+
+    padding:
+        0 0 10px;
+
+    background:
+        transparent;
+
+    border:
+        2px solid rgba(255, 255, 255, 0.95);
+
+    border-radius:
+        999px;
+
+    cursor:
+        pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.scroll-button:hover {
+    transform:
+        translateY(-5px);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.15),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+
+/* BOLINHA DO SCROLL */
+
+.scroll-button-circle {
+    width:
+        clamp(25px, 5vw, 30px);
+
+    aspect-ratio:
+        1;
+
+    display:
+        block;
+
+    background:
+        #fff7f8;
+
+    border-radius:
+        50%;
+
+    animation:
+        scroll-circle 1.8s ease-in-out infinite;
+}
+
+
+/* =========================================
+   ANIMAÇÃO DO SCROLL
+========================================= */
+
+@keyframes scroll-circle {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-12px);
+    }
+
+}
+
+
+/* =========================================
+   TEXTO ABAIXO DO SCROLL
+========================================= */
+
+.scroll-text {
+    text-align: center;
+
+    font-size:
+        clamp(13px,
+            calc(11px + 0.35vw),
+            17px);
+
+    line-height:
+        1.3;
+
+    color:
+        var(--white);
+}

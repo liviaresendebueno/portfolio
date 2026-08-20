@@ -5,11 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lívia Bueno</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="responsividade.css">
-    <script defer src="/site.js"></script>
-    <script defer src="/animation.js"></script>
-    <script defer src="/waves.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet" href="css/hero.css">
+
+    <link rel="stylesheet" href="css/projetos.css">
+
+    <link rel="stylesheet" href="css/sobre-mim.css">
+
+    <link rel="stylesheet" href="css/footer.css">
+
+    <link rel="stylesheet" href="css/responsividade.css">
+
+    <script defer src="js/site.js"></script>
+    <script defer src="js/animation.js"></script>
+    <script defer src="js/projetos.js"></script>
 </head>
 
 <body>
@@ -75,6 +85,7 @@
                 </button>
             </div>
         </nav>
+        
         <!-- Mobile Menu Overlay -->
         <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
 
@@ -87,6 +98,7 @@
             </div>
 
             <ul class="mobile-menu-nav">
+
                 <li class="mobile-menu-item">
                     <a href="#home" class="mobile-menu-link active">
                         <svg class="mobile-menu-icon" viewBox="0 0 24 24">
@@ -96,8 +108,9 @@
                         <span>Home</span>
                     </a>
                 </li>
+
                 <li class="mobile-menu-item">
-                    <a href="#about" class="mobile-menu-link">
+                    <a href="#projetos" class="mobile-menu-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M3 7.5C3 6.67157 3.67157 6 4.5 6H9L11 8H19.5C20.3284 8 21 8.67157 21 9.5V17.5C21 18.3284 20.3284 19 19.5 19H4.5C3.67157 19 3 18.3284 3 17.5V7.5Z"
@@ -107,8 +120,9 @@
                         <span>Projetos</span>
                     </a>
                 </li>
+
                 <li class="mobile-menu-item">
-                    <a href="#services" class="mobile-menu-link">
+                    <a href="#sobre-mim" class="mobile-menu-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="8" r="3.5" stroke="currentColor" stroke-width="1.8" />
                             <path d="M5 20C5.5 15.8 8.1 13.5 12 13.5C15.9 13.5 18.5 15.8 19 20" stroke="currentColor"
@@ -117,8 +131,9 @@
                         <span>Sobre Mim</span>
                     </a>
                 </li>
+
                 <li class="mobile-menu-item">
-                    <a href="#portfolio" class="mobile-menu-link">
+                    <a href="#contato" class="mobile-menu-link">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8" />
                             <path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
@@ -127,8 +142,8 @@
                         <span>Contato</span>
                     </a>
                 </li>
-            </ul>
 
+            </ul>
 
         </div>
     </header>
@@ -154,84 +169,329 @@
                 <span class="scroll-button-circle"></span>
             </button>
             <p class="scroll-text">Scrool down to see more projects</p>
-
-            
         </section>
 
         <section id="projetos">
-            <h2>Projetos</h2><span>número de projetos aqui</span>
-            <div>
-                <img src="" alt="">
-                <h3>Nome</h3>
-                <span>data</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-                <button>View More</button>
+            <div class="projetos-header">
+                <div>
+                    <h2 class="titles">Projetos</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
+                </div>
+
+                <span id="quantidade-projetos"></span>
             </div>
-            <div>
-                <img src="" alt="">
-                <h3>Nome</h3>
-                <span>Data</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-                <button>View More</button>
-            </div>
-            <div>
-                <img src="" alt="">
-                <h3>Nome</h3>
-                <span>Data</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-                <button>View More</button>
+
+            <div class="projetos-container" id="projetos-container">
+                <!-- Os cards serão criados pelo JavaScript -->
             </div>
         </section>
-        <section>
-            <div>
-                <div>
-                    <h2>Sobre Mim</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque a mollis augue.</p>
-                </div>
-                <div>
-                    <div>
-                        <p>Tecnologias</p>
-                        <div>Javascript</div>
-                        <div>SQL</div>
-                        <div>Git</div>
-                        <div>API Rest</div>
-                        <div>TypeScript</div>
+
+        <section id="sobre-mim" class="secao-escura">
+
+            <div class="sobre-container">
+
+                <!-- PARTE SUPERIOR -->
+                <div class="sobre-grid">
+
+                    <!-- SOBRE MIM -->
+                    <div class="sobre-texto">
+
+                        <h2 class="titles sobre-title">
+                            Sobre Mim
+                        </h2>
+
+                        <p>
+                            Sou desenvolvedora web apaixonada por tecnologia
+                            e por transformar ideias em experiências digitais.
+                        </p>
+
+                        <p>
+                            Tenho experiência no desenvolvimento de sites e
+                            aplicações web, sempre buscando criar soluções
+                            modernas, acessíveis e com boa experiência para
+                            o usuário.
+                        </p>
+
                     </div>
+
+
+                    <!-- TECNOLOGIAS -->
+                    <div class="tecnologias-card">
+
+                        <div class="tecnologias-header">
+                            <span class="tecnologias-icon">&lt;/&gt;</span>
+
+                            <h3>Tecnologias</h3>
+                        </div>
+
+                        <div class="tecnologias-lista">
+
+                            <!-- JAVASCRIPT -->
+                            <div class="tecnologia">
+                                <span class="tecnologia-icon tecnologia-js">
+                                    JS
+                                </span>
+
+                                <span>JavaScript</span>
+                            </div>
+
+
+                            <!-- SQL -->
+                            <div class="tecnologia">
+                                <span class="tecnologia-icon">
+
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <ellipse cx="12" cy="5" rx="7" ry="3"></ellipse>
+
+                                        <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5"></path>
+
+                                        <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"></path>
+                                    </svg>
+
+                                </span>
+
+                                <span>SQL</span>
+                            </div>
+
+
+                            <!-- GIT -->
+                            <div class="tecnologia">
+                                <span class="tecnologia-icon">
+
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="M12 2L22 12L12 22L2 12Z"></path>
+
+                                        <circle cx="9" cy="8" r="1.3"></circle>
+                                        <circle cx="15" cy="16" r="1.3"></circle>
+                                        <circle cx="15" cy="9" r="1.3"></circle>
+
+                                        <path d="M10 9l4 6"></path>
+                                        <path d="M10 8h4"></path>
+                                    </svg>
+
+                                </span>
+
+                                <span>Git</span>
+                            </div>
+
+
+                            <!-- API REST -->
+                            <div class="tecnologia">
+                                <span class="tecnologia-icon">
+
+                                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                                        <path d="
+                    M6 18
+                    H18
+                    A4 4 0 0 0 18 10
+                    A6 6 0 0 0 6.5 8
+                    A5 5 0 0 0 6 18
+                "></path>
+                                    </svg>
+
+                                </span>
+
+                                <span>API Rest</span>
+                            </div>
+
+
+                            <!-- TYPESCRIPT -->
+                            <div class="tecnologia">
+                                <span class="tecnologia-icon tecnologia-ts">
+                                    TS
+                                </span>
+
+                                <span>TypeScript</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
+
+
+                <!-- EXPERIÊNCIA -->
+                <div class="experiencia">
+
+                    <h3 class="experiencia-title">
+                        Experiência
+                    </h3>
+
+
+                    <!-- EXPERIÊNCIA 1 -->
+                    <article class="experiencia-card">
+
+                        <div class="experiencia-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 21h16"></path>
+                                <path d="M6 21V5l6-2v18"></path>
+                                <path d="M12 21V8h6v13"></path>
+
+                                <path d="M8.5 7.5h1"></path>
+                                <path d="M8.5 10.5h1"></path>
+                                <path d="M8.5 13.5h1"></path>
+                                <path d="M8.5 16.5h1"></path>
+
+                                <path d="M14.5 11h1"></path>
+                                <path d="M14.5 14h1"></path>
+                                <path d="M14.5 17h1"></path>
+                            </svg>
+                        </div>
+
+                        <div class="experiencia-conteudo">
+
+                            <div class="experiencia-header">
+
+                                <div>
+                                    <h4>Agência Spelta</h4>
+
+                                    <span class="experiencia-cargo">
+                                        Estagiária em Desenvolvimento Web
+                                    </span>
+                                </div>
+
+                                <time>
+                                    Set 2021 - Dez 2022
+                                </time>
+
+                            </div>
+
+                            <p>
+                                Desenvolvimento e manutenção de páginas web;
+                                suporte técnico e atualização de layouts.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- EXPERIÊNCIA 2 -->
+                    <article class="experiencia-card">
+
+                        <div class="experiencia-icon">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M4 21h16"></path>
+                                <path d="M6 21V5l6-2v18"></path>
+                                <path d="M12 21V8h6v13"></path>
+
+                                <path d="M8.5 7.5h1"></path>
+                                <path d="M8.5 10.5h1"></path>
+                                <path d="M8.5 13.5h1"></path>
+                                <path d="M8.5 16.5h1"></path>
+
+                                <path d="M14.5 11h1"></path>
+                                <path d="M14.5 14h1"></path>
+                                <path d="M14.5 17h1"></path>
+                            </svg>
+                        </div>
+                        <div class="experiencia-conteudo">
+
+                            <div class="experiencia-header">
+
+                                <div>
+                                    <h4>
+                                        Fix-se Soluções e Marketing
+                                    </h4>
+
+                                    <span class="experiencia-cargo">
+                                        Estagiária em Desenvolvimento Web
+                                    </span>
+                                </div>
+
+                                <time>
+                                    Set 2023 - Abr 2024
+                                </time>
+
+                            </div>
+
+                            <p>
+                                Criação e atualização de sites; apoio em
+                                design e conteúdos digitais.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
             </div>
-            <div>
-                <h3>Experiência</h3>
-                <div>
-                    <img src="" alt="">
-                    <span>Agência Spelta</span>
-                    <span>set 2021 - dez 2022</span>
-                    <p>Estagiária em Desenvolvimento Web</p>
-                    <p>Desenvolvimento e manutenção de páginas web; suporte técnico e atualização de layouts.</p>
-                </div>
-                <div>
-                    <img src="" alt="">
-                    <span>Fix-se Soluções e Marketing</span>
-                    <span>set 2021 - dez 2022</span>
-                    <p>Estagiária em Desenvolvimento Web</p>
-                    <p>Criação e atualização de sites; apoio em design e conteúdos digitais.</p>
-                </div>
-            </div>
+
         </section>
     </main>
-    <footer>
-        <div>
-            <span>Vamos trabalhar juntos</span>
-            <a href="">
-                <p>E-mail<img src="" alt="E-mail"></p>
-            </a>
-            <a href="">
-                <p>GitHub<img src="" alt=""></p>
-            </a>
-            <a href="">
-                <p>LinkedIn<img src="" alt=""></p>
-            </a>
+    <footer id="contato">
+
+        <div class="footer-container">
+
+            <div class="footer-header">
+                <h2>Vamos trabalhar juntos?</h2>
+
+                <p>
+                    Estou sempre aberta a novos desafios e oportunidades.
+                </p>
+            </div>
+
+
+            <div class="footer-contatos">
+
+                <!-- E-MAIL -->
+                <a href="mailto:seuemail@email.com" class="footer-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+
+                        <path d="M3 7l9 6 9-6"></path>
+                    </svg>
+
+                    <span>E-mail</span>
+                </a>
+
+
+                <!-- GITHUB -->
+                <a href="https://github.com/seuusuario" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5
+                        c3.3-.4 6.8-1.6 6.8-7
+                        A5.4 5.4 0 0 0 19.4 4
+                        A5 5 0 0 0 19.3.5
+                        S18.2.1 15 1.8
+                        a13.4 13.4 0 0 0-7 0
+                        C4.8.1 3.7.5 3.7.5
+                        A5 5 0 0 0 3.6 4
+                        a5.4 5.4 0 0 0-1.4 3.7
+                        c0 5.4 3.5 6.6 6.8 7
+                        A4.8 4.8 0 0 0 8 18v4"></path>
+
+                        <path d="M8 19c-3 .9-3-1.5-4-2"></path>
+                    </svg>
+
+                    <span>GitHub</span>
+                </a>
+
+
+                <!-- LINKEDIN -->
+                <a href="https://linkedin.com/in/seuusuario" target="_blank" class="footer-link">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                        <rect x="3" y="9" width="4" height="12"></rect>
+
+                        <circle cx="5" cy="5" r="2"></circle>
+
+                        <path d="M11 21V9h4v2
+                        a4 4 0 0 1 7 3v7"></path>
+
+                        <path d="M15 21v-6"></path>
+
+                    </svg>
+
+                    <span>LinkedIn</span>
+                </a>
+
+            </div>
+
         </div>
+
     </footer>
 </body>
 

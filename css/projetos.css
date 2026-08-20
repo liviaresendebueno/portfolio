@@ -1,0 +1,372 @@
+/* ================================
+   SEÇÃO PROJETOS
+================================ */
+
+#projetos {
+    width: 100%;
+
+    padding:
+        clamp(70px, 8vw, 120px)
+        clamp(25px, 7vw, 120px);
+
+    box-sizing: border-box;
+
+    background:
+
+        /* brilho roxo esquerda */
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(115, 69, 180, 0.14),
+            transparent 32%
+        ),
+
+        /* brilho rosado direita */
+        radial-gradient(
+            circle at 90% 50%,
+            rgba(210, 150, 187, 0.08),
+            transparent 30%
+        ),
+
+}
+
+
+/* ================================
+   CABEÇALHO DOS PROJETOS
+================================ */
+
+.projetos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    gap: 20px;
+
+    margin-bottom: 45px;
+}
+
+
+.projetos-header p {
+    margin-top: 8px;
+
+    color: var(--text-secondary);
+}
+
+
+#quantidade-projetos {
+    color: var(--purple-light);
+
+    font-size: 1rem;
+
+    white-space: nowrap;
+}
+
+
+/* ================================
+   CONTAINER DOS CARDS
+================================ */
+
+.projetos-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(290px, 1fr));
+
+    gap: clamp(20px, 2vw, 32px);
+
+    width: 100%;
+}
+
+
+/* ================================
+   CARD
+================================ */
+
+.projeto-card {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius: 22px;
+
+    /*
+       Aqui está a transparência.
+       Quanto menor o último número,
+       mais transparente.
+    */
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(66, 55, 94, 0.60),
+            rgba(29, 28, 48, 0.52)
+        );
+
+    border:
+        1px solid
+        rgba(196, 154, 255, 0.16);
+
+    /* efeito vidro */
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        background 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* brilho bem leve dentro do card */
+
+.projeto-card::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 10% 0%,
+            rgba(171, 113, 255, 0.10),
+            transparent 35%
+        );
+
+    opacity: 0;
+
+    transition: opacity 0.35s ease;
+}
+
+
+/* ================================
+   HOVER
+================================ */
+
+.projeto-card:hover {
+    transform: translateY(-8px);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(76, 61, 108, 0.72),
+            rgba(34, 32, 56, 0.65)
+        );
+
+    border-color:
+        rgba(174, 112, 255, 0.50);
+
+    box-shadow:
+        0 28px 60px rgba(0, 0, 0, 0.28),
+        0 0 35px rgba(145, 87, 225, 0.08);
+}
+
+
+.projeto-card:hover::before {
+    opacity: 1;
+}
+
+
+/* ================================
+   IMAGEM
+================================ */
+
+.projeto-imagem {
+    width: 100%;
+    height: clamp(210px, 18vw, 300px);
+
+    overflow: hidden;
+
+    background: #17172b;
+}
+
+
+.projeto-imagem img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+.projeto-card:hover .projeto-imagem img {
+    transform: scale(1.035);
+
+    filter: brightness(1.05);
+}
+
+
+/* ================================
+   CONTEÚDO
+================================ */
+
+.projeto-conteudo {
+    display: flex;
+    flex-direction: column;
+
+    flex: 1;
+
+    padding:
+        clamp(22px, 2vw, 30px);
+}
+
+
+/* Categoria + data */
+
+.projeto-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+/* ================================
+   CATEGORIA
+================================ */
+
+.projeto-categoria {
+    padding: 7px 15px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(151, 92, 225, 0.18);
+
+    border:
+        1px solid
+        rgba(187, 135, 255, 0.10);
+
+    color: var(--purple-light);
+
+    font-size: 0.85rem;
+}
+
+
+/* ================================
+   DATA
+================================ */
+
+.projeto-data {
+    color: var(--text-secondary);
+
+    font-size: 0.9rem;
+}
+
+
+/* ================================
+   TÍTULO
+================================ */
+
+.projeto-card h3 {
+    margin:
+        0
+        0
+        14px;
+
+    color: var(--text-primary);
+
+    font-size:
+        clamp(1.35rem, 1.5vw, 1.7rem);
+
+    font-weight: 700;
+}
+
+
+/* ================================
+   DESCRIÇÃO
+================================ */
+
+.projeto-card p {
+    margin:
+        0
+        0
+        28px;
+
+    color: var(--text-secondary);
+
+    font-size:
+        clamp(0.95rem, 1vw, 1.05rem);
+
+    line-height: 1.65;
+}
+
+
+/* ================================
+   BOTÃO
+================================ */
+
+.projeto-button {
+    margin-top: auto;
+
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 14px;
+
+    border:
+        1px solid
+        rgba(166, 96, 255, 0.85);
+
+    border-radius: 14px;
+
+    background:
+        rgba(126, 70, 185, 0.04);
+
+    color: var(--text-primary);
+
+    text-decoration: none;
+
+    font-weight: 500;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.projeto-button span {
+    transition:
+        transform 0.3s ease;
+}
+
+
+.projeto-button:hover {
+    background:
+        rgba(137, 77, 213, 0.20);
+
+    border-color:
+        var(--purple);
+
+    box-shadow:
+        0 0 25px
+        rgba(153, 88, 235, 0.12);
+}
+
+
+.projeto-button:hover span {
+    transform: translateX(5px);
+}
+

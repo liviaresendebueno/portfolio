@@ -1,0 +1,594 @@
+/* =========================================
+   SOBRE MIM
+========================================= */
+
+#sobre-mim {
+    width: 100%;
+
+    position: relative;
+
+    padding:
+        0 clamp(25px, 7vw, 120px) clamp(70px, 8vw, 120px) clamp(25px, 7vw, 120px);
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================
+   CONTAINER PRINCIPAL
+========================================= */
+
+.sobre-container {
+    width: min(100%, 1400px);
+
+    margin: 0 auto;
+
+    padding:
+        clamp(30px, 4vw, 60px);
+
+    position: relative;
+
+    background:
+        linear-gradient(145deg,
+            rgba(52, 44, 78, 0.35),
+            rgba(25, 24, 43, 0.28));
+
+    border:
+        1px solid rgba(190, 154, 255, 0.15);
+
+    border-radius: 28px;
+
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.18),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+
+/* brilho sutil */
+
+.sobre-container::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    border-radius: inherit;
+
+    background:
+        radial-gradient(circle at 0% 0%,
+            rgba(167, 108, 255, 0.08),
+            transparent 35%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   PARTE SUPERIOR
+========================================= */
+
+.sobre-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.1fr) minmax(320px, 0.9fr);
+
+    gap:
+        clamp(40px, 6vw, 90px);
+
+    align-items: stretch;
+}
+
+
+/* =========================================
+   SOBRE MIM - TEXTO
+========================================= */
+
+.sobre-texto {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+.sobre-title {
+    position: relative;
+
+    margin-bottom: 30px;
+}
+
+
+/* tracinho roxo */
+
+.sobre-title::before {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 4px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(90deg,
+            var(--purple),
+            var(--purple-light));
+
+    border-radius: 999px;
+
+    box-shadow:
+        0 0 18px rgba(167, 108, 255, 0.4);
+}
+
+
+.sobre-texto p {
+    max-width: 650px;
+
+    margin-bottom: 18px;
+
+    color: var(--text-secondary);
+
+    font-size:
+        clamp(0.95rem, 1vw, 1.05rem);
+
+    line-height: 1.8;
+}
+
+/* =========================================
+   TECNOLOGIAS
+========================================= */
+
+.tecnologias-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding:
+        clamp(25px, 3vw, 40px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(65, 52, 92, 0.30),
+            rgba(25, 24, 44, 0.32));
+
+    border:
+        1px solid rgba(190, 154, 255, 0.14);
+
+    border-radius: 24px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.025);
+}
+
+
+/* =========================================
+   CABEÇALHO
+========================================= */
+
+.tecnologias-header {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+
+.tecnologias-header h3 {
+    color: var(--text-primary);
+
+    font-size:
+        clamp(1.25rem, 1.5vw, 1.55rem);
+
+    font-weight: 600;
+}
+
+
+/* =========================================
+   ÍCONE DO TÍTULO </> 
+========================================= */
+
+.tecnologias-icon {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--purple-light);
+
+    font-size: 1.2rem;
+    font-weight: 600;
+
+    background:
+        rgba(139, 82, 207, 0.20);
+
+    border:
+        1px solid rgba(187, 135, 255, 0.12);
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   LISTA DE TECNOLOGIAS
+========================================= */
+
+.tecnologias-lista {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* =========================================
+   CARD / PILL DE CADA TECNOLOGIA
+========================================= */
+
+.tecnologia {
+    min-height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    padding:
+        10px 20px;
+
+    color: var(--text-primary);
+
+    font-size: 0.95rem;
+    font-weight: 600;
+
+    background:
+        rgba(77, 56, 126, 0.35);
+
+    border:
+        1px solid rgba(190, 154, 255, 0.18);
+
+    border-radius: 16px;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.tecnologia:hover {
+    transform: translateY(-4px);
+
+    background:
+        rgba(107, 70, 170, 0.48);
+
+    border-color:
+        rgba(196, 154, 255, 0.42);
+
+    box-shadow:
+        0 10px 30px rgba(117, 69, 184, 0.15);
+}
+
+
+/* =========================================
+   ÍCONE DE CADA TECNOLOGIA
+========================================= */
+
+.tecnologia-icon {
+    width: 30px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--purple-light);
+}
+
+
+/* SVG DOS ÍCONES */
+
+.tecnologia-icon svg {
+    width: 100%;
+    height: 100%;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.7;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+
+/* =========================================
+   JAVASCRIPT
+========================================= */
+
+.tecnologia-js {
+    color: #37285f;
+
+    background: #e2baff;
+
+    font-size: 0.8rem;
+    font-weight: 700;
+
+    border-radius: 3px;
+}
+
+
+/* =========================================
+   TYPESCRIPT
+========================================= */
+
+.tecnologia-ts {
+    color: #37285f;
+
+    background: #d8a9fa;
+
+    font-size: 0.75rem;
+    font-weight: 700;
+
+    border-radius: 3px;
+}
+
+
+
+
+/* =========================================
+   EXPERIÊNCIA
+========================================= */
+
+.experiencia {
+    margin-top:
+        clamp(55px, 7vw, 90px);
+}
+
+
+.experiencia-title {
+    position: relative;
+
+    margin-bottom: 32px;
+
+    color: var(--text-primary);
+
+    font-family: var(--sortsmill);
+
+    font-size:
+        clamp(1.8rem, 3vw, 2.7rem);
+
+    font-weight: 400;
+}
+
+
+/* linha roxa */
+
+.experiencia-title::before {
+    content: "";
+
+    display: block;
+
+    width: 48px;
+    height: 4px;
+
+    margin-bottom: 18px;
+
+    background:
+        linear-gradient(90deg,
+            var(--purple),
+            var(--purple-light));
+
+    border-radius: 999px;
+}
+
+
+/* =========================================
+   CARD DE EXPERIÊNCIA
+========================================= */
+
+.experiencia-card {
+    display: grid;
+
+    grid-template-columns: 80px minmax(0, 1fr);
+
+    gap: 28px;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    padding:
+        clamp(20px, 2.5vw, 30px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(54, 45, 79, 0.40),
+            rgba(26, 25, 44, 0.36));
+
+    border:
+        1px solid rgba(190, 154, 255, 0.14);
+
+    border-radius: 20px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.experiencia-card:hover {
+    transform:
+        translateY(-4px);
+
+    border-color:
+        rgba(177, 116, 255, 0.32);
+
+    background:
+        linear-gradient(145deg,
+            rgba(62, 49, 91, 0.50),
+            rgba(30, 29, 49, 0.45));
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+
+/* =========================================
+   ÍCONE DA EXPERIÊNCIA
+========================================= */
+
+.experiencia-icon {
+    width: 80px;
+    aspect-ratio: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    color: var(--purple-light);
+
+    background:
+        linear-gradient(145deg,
+            rgba(143, 91, 220, 0.18),
+            rgba(94, 61, 151, 0.08));
+
+    border:
+        1px solid rgba(190, 154, 255, 0.12);
+
+    border-radius: 16px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+/* SVG */
+
+.experiencia-icon svg {
+    width: 36px;
+    height: 36px;
+
+    fill: none;
+
+    stroke: currentColor;
+    stroke-width: 1.6;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* hover */
+
+.experiencia-card:hover .experiencia-icon {
+    transform: translateY(-3px);
+
+    background:
+        linear-gradient(145deg,
+            rgba(155, 96, 235, 0.25),
+            rgba(96, 63, 151, 0.12));
+
+    border-color:
+        rgba(190, 154, 255, 0.30);
+
+    box-shadow:
+        0 10px 30px rgba(120, 65, 200, 0.12);
+}
+
+
+.experiencia-card:hover .experiencia-icon svg {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   CONTEÚDO DA EXPERIÊNCIA
+========================================= */
+
+.experiencia-conteudo {
+    min-width: 0;
+}
+
+
+.experiencia-header {
+    display: flex;
+
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 10px;
+}
+
+
+.experiencia-header h4 {
+    margin-bottom: 3px;
+
+    color: var(--text-primary);
+
+    font-size:
+        clamp(1rem, 1.3vw, 1.2rem);
+
+    font-weight: 600;
+}
+
+
+.experiencia-cargo {
+    color: var(--purple-light);
+
+    font-size: 0.9rem;
+}
+
+
+.experiencia-header time {
+    flex-shrink: 0;
+
+    color: var(--text-secondary);
+
+    font-size: 0.85rem;
+}
+
+
+.experiencia-conteudo>p {
+    max-width: 850px;
+
+    color: var(--text-secondary);
+
+    font-size: 0.92rem;
+
+    line-height: 1.6;
+}

@@ -1,0 +1,1021 @@
+/* =========================================
+   FONTES
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Sorts+Mill+Goudy:ital@0;1&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+/* =========================================
+   VARIÁVEIS GERAIS
+========================================= */
+
+:root {
+    --white: #ffffff;
+
+    --bg-dark: #090a18;
+    --bg-dark-2: #0e1022;
+    --bg-purple: #171a3a;
+
+    --purple: #a76cff;
+    --purple-light: #c49aff;
+
+    --text-primary: #f8f5ff;
+    --text-secondary: #beb7c9;
+
+    --border: rgba(190, 154, 255, 0.18);
+
+    --card-bg: rgba(43, 37, 72, 0.62);
+    --card-bg-hover: rgba(56, 48, 88, 0.78);
+
+    --degrade:
+        linear-gradient(321deg,
+            #9d67a0 0%,
+            #6a4b87 10%,
+            #4e3b78 22%,
+            #3b316f 35%,
+            #2a2868 48%,
+            #1d225e 65%,
+            #141a4e 100%);
+
+    --blob-main: #d296bb;
+    --blob-light: #f9e8ee;
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   HTML
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+
+    scroll-padding-top: 120px;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    font-family:
+        var(--poppins);
+
+    color:
+        var(--text-primary);
+
+    background:
+        var(--bg-dark);
+
+    overflow-x:
+        hidden;
+}
+
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color:
+        var(--white);
+
+    text-decoration:
+        none;
+}
+
+
+/* =========================================
+   BOTÕES
+========================================= */
+
+button {
+    font:
+        inherit;
+}
+
+
+/* =========================================
+   CANVAS
+========================================= */
+
+canvas {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar-container {
+    width: fit-content;
+    max-width: calc(100% - 40px);
+
+    position: fixed;
+
+    top: 20px;
+    left: 50%;
+
+    z-index: 1000;
+
+    transform: translateX(-50%);
+
+    transition:
+        top 0.45s ease,
+        transform 0.45s ease;
+}
+
+
+.navbar {
+    width: fit-content;
+    min-height: 60px;
+
+    padding: 8px 12px;
+
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 50px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+
+    transition:
+        background 0.6s ease,
+        backdrop-filter 0.6s ease,
+        border-color 0.6s ease,
+        box-shadow 0.6s ease,
+        padding 0.45s ease,
+        min-height 0.45s ease;
+}
+
+
+/* ELEMENTOS ACIMA DO BRILHO */
+
+.navbar>* {
+    position:
+        relative;
+
+    z-index:
+        2;
+}
+
+
+/* =========================================
+   EFEITO DE BRILHO DA NAVBAR
+========================================= */
+
+.navbar::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.06),
+            transparent);
+
+    transform: skewX(-20deg);
+
+    transition:
+        left 1.1s ease;
+
+    pointer-events: none;
+}
+
+
+.navbar:hover::before {
+    left: 150%;
+}
+
+
+.navbar:hover {
+    border-color:
+        rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 16px 42px rgba(0, 0, 0, 0.14),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================
+   NAVBAR APÓS SCROLL
+========================================= */
+
+.navbar-container.scrolled {
+    top: 12px;
+}
+
+
+.navbar-container.scrolled .navbar {
+    min-height: 56px;
+
+    background:
+        rgba(37, 31, 73, 0.68);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    border-color:
+        rgba(215, 188, 255, 0.22);
+
+    box-shadow:
+        0 15px 40px rgba(5, 5, 20, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.10);
+}
+
+
+/* =========================================
+   MENU DESKTOP
+========================================= */
+
+.navbar-nav {
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        5px;
+
+    margin:
+        0;
+
+    padding:
+        0;
+
+    list-style:
+        none;
+}
+
+
+.nav-item {
+    position:
+        relative;
+}
+
+
+/* =========================================
+   LINKS DA NAVBAR
+========================================= */
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    padding: 10px 16px;
+
+    position: relative;
+    overflow: hidden;
+
+    color: rgba(255, 255, 255, 0.78);
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    border-radius: 25px;
+
+    transition:
+        color 0.35s ease,
+        background 0.35s ease,
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+/* Mantém texto e ícone acima dos efeitos */
+
+.nav-link>* {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   BRILHO SUAVE NO HOVER
+========================================= */
+
+.nav-link::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.10),
+            rgba(255, 255, 255, 0.03));
+
+    border-radius: inherit;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.35s ease;
+
+    pointer-events: none;
+}
+
+
+/* =========================================
+   HOVER
+========================================= */
+
+.nav-link:hover {
+    color: var(--white);
+
+    transform: translateY(-1px);
+}
+
+
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+
+/* =========================================
+   LINK ATIVO
+========================================= */
+
+.nav-link.active {
+    color: var(--white);
+
+    background:
+        linear-gradient(135deg,
+            rgba(255, 255, 255, 0.16),
+            rgba(255, 255, 255, 0.07));
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.14),
+        0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+
+/* Não precisamos do ::before no ativo */
+
+.nav-link.active::before {
+    opacity: 0;
+}
+
+
+/* =========================================
+   ÍCONES
+========================================= */
+
+.nav-link svg,
+.nav-icon {
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.35s ease;
+}
+
+
+/* pequeno movimento no ícone */
+
+.nav-link:hover svg,
+.nav-link:hover .nav-icon {
+    transform: scale(1.06);
+}
+
+
+/* =========================================
+   ACESSIBILIDADE - TECLADO
+========================================= */
+
+.nav-link:focus-visible {
+    outline: 2px solid rgba(196, 154, 255, 0.8);
+
+    outline-offset: 3px;
+}
+
+/* =========================================
+   ÍCONES DA NAVBAR
+========================================= */
+
+.nav-icon {
+    width:
+        16px;
+
+    height:
+        16px;
+
+    flex-shrink:
+        0;
+
+    fill:
+        none;
+
+    stroke:
+        currentColor;
+
+    stroke-width:
+        2;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.nav-link:hover .nav-icon {
+    transform:
+        scale(1.1);
+}
+
+
+/* =========================================
+   BOTÃO DE CONTATO
+========================================= */
+
+.cta-button {
+    margin-left:
+        5px;
+
+    padding:
+        10px 20px;
+
+    color:
+        var(--white);
+
+    font-size:
+        0.9rem;
+
+    font-weight:
+        600;
+
+    white-space:
+        nowrap;
+
+    background:
+        linear-gradient(135deg,
+            #ff6b6b,
+            #ee5a52);
+
+    border-radius:
+        25px;
+
+    box-shadow:
+        0 8px 20px rgba(255, 107, 107, 0.30);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.cta-button:hover {
+    transform:
+        translateY(-1px);
+
+    box-shadow:
+        0 10px 20px rgba(255, 107, 107, 0.40);
+}
+
+
+/* =========================================
+   BOTÃO HAMBÚRGUER
+========================================= */
+
+.mobile-toggle {
+    grid-column:
+        3;
+
+    justify-self:
+        end;
+
+    display:
+        none;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    width:
+        44px;
+
+    height:
+        44px;
+
+    padding:
+        8px;
+
+    flex-shrink:
+        0;
+
+    color:
+        var(--white);
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.mobile-toggle:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================
+   LINHAS DO HAMBÚRGUER
+========================================= */
+
+.hamburger {
+    width:
+        24px;
+
+    height:
+        18px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    gap:
+        4px;
+}
+
+
+.hamburger span {
+    display:
+        block;
+
+    width:
+        24px;
+
+    height:
+        2px;
+
+    background:
+        var(--white);
+
+    border-radius:
+        2px;
+
+    transform-origin:
+        center;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.mobile-toggle.active .hamburger span:nth-child(1) {
+    transform:
+        rotate(45deg) translate(4px, 4px);
+}
+
+
+.mobile-toggle.active .hamburger span:nth-child(2) {
+    opacity:
+        0;
+}
+
+
+.mobile-toggle.active .hamburger span:nth-child(3) {
+    transform:
+        rotate(-45deg) translate(4px, -4px);
+}
+
+
+/* =========================================
+   OVERLAY DO MENU MOBILE
+========================================= */
+
+.mobile-menu-overlay {
+    width:
+        100%;
+
+    height:
+        100dvh;
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        1500;
+
+    background:
+        rgba(0, 0, 0, 0.75);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+}
+
+
+.mobile-menu-overlay.active {
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+}
+
+
+/* =========================================
+   MENU MOBILE
+========================================= */
+
+.mobile-menu {
+    width:
+        100%;
+
+    height:
+        100dvh;
+
+    position:
+        fixed;
+
+    inset:
+        0;
+
+    z-index:
+        1600;
+
+    overflow-y:
+        auto;
+
+    transform:
+        translateY(-100%);
+
+    visibility:
+        hidden;
+
+    pointer-events:
+        none;
+
+    transition:
+        transform 0.4s cubic-bezier(0.25,
+            0.46,
+            0.45,
+            0.94),
+        visibility 0.4s ease;
+}
+
+
+.mobile-menu.active {
+    transform:
+        translateY(0);
+
+    visibility:
+        visible;
+
+    pointer-events:
+        auto;
+}
+
+
+/* =========================================
+   CABEÇALHO DO MENU MOBILE
+========================================= */
+
+.mobile-menu-header {
+    width:
+        min(100%, 1200px);
+
+    margin-inline:
+        auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        30px 30px 20px;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   BOTÃO FECHAR MENU
+========================================= */
+
+.mobile-menu-close {
+    width:
+        48px;
+
+    height:
+        48px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    padding:
+        8px;
+
+    color:
+        var(--white);
+
+    font-size:
+        2rem;
+
+    line-height:
+        1;
+
+    background:
+        transparent;
+
+    border:
+        none;
+
+    border-radius:
+        50%;
+
+    cursor:
+        pointer;
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.mobile-menu-close:hover {
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    transform:
+        scale(1.08);
+}
+
+
+/* =========================================
+   LINKS DO MENU MOBILE
+========================================= */
+
+.mobile-menu-nav {
+    width:
+        min(100%, 560px);
+
+    margin:
+        0 auto;
+
+    padding:
+        40px 30px;
+
+    list-style:
+        none;
+}
+
+
+.mobile-menu-item {
+    margin-bottom:
+        8px;
+}
+
+
+.mobile-menu-link {
+    width:
+        100%;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+    gap:
+        16px;
+
+    margin-bottom:
+        12px;
+
+    padding:
+        20px 24px;
+
+    color:
+        rgba(255, 255, 255, 0.90);
+
+    font-size:
+        1.1rem;
+
+    font-weight:
+        500;
+
+    background:
+        rgba(255, 255, 255, 0.06);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.12);
+
+    border-radius:
+        20px;
+
+    transition:
+        background 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.mobile-menu-link:hover,
+.mobile-menu-link.active {
+    color:
+        var(--white);
+
+    background:
+        rgba(255, 255, 255, 0.16);
+
+    border-color:
+        rgba(255, 255, 255, 0.22);
+
+    transform:
+        translateX(8px);
+}
+
+
+/* =========================================
+   ÍCONES DO MENU MOBILE
+========================================= */
+
+.mobile-menu-icon {
+    width:
+        24px;
+
+    height:
+        24px;
+
+    flex-shrink:
+        0;
+
+    fill:
+        none;
+
+    stroke:
+        currentColor;
+
+    stroke-width:
+        2;
+
+    stroke-linecap:
+        round;
+
+    stroke-linejoin:
+        round;
+}
+
+
+/* =========================================
+   CLASSES GLOBAIS
+========================================= */
+
+
+/* TÍTULOS DAS SEÇÕES */
+
+.titles {
+    margin:
+        0;
+
+    font-family:
+        var(--sortsmill);
+
+    font-size:
+        clamp(2rem, 6vw, 4rem);
+
+    font-weight:
+        100;
+
+    line-height:
+        1.1;
+
+    color:
+        var(--text-primary);
+}
