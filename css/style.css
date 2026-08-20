@@ -12,9 +12,12 @@
 ========================================= */
 
 :root {
+    --sortsmill: 'Sorts Mill Goudy', serif;
+    --poppins: 'Poppins', sans-serif;
+
     --white: #ffffff;
 
-    --bg-dark: #090a18;
+    --bg-dark: #0f1337;
     --bg-dark-2: #0e1022;
     --bg-purple: #171a3a;
 

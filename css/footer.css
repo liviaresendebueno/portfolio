@@ -32,25 +32,6 @@ footer {
 
     text-align: center;
 
-    background:
-        radial-gradient(
-            circle at 10% 100%,
-            rgba(120, 62, 210, 0.22),
-            transparent 35%
-        ),
-
-        radial-gradient(
-            circle at 90% 0%,
-            rgba(156, 92, 222, 0.10),
-            transparent 32%
-        ),
-
-        linear-gradient(
-            145deg,
-            rgba(46, 34, 78, 0.72),
-            rgba(20, 19, 38, 0.88)
-        );
-
     border:
         1px solid
         rgba(171, 110, 255, 0.45);
@@ -105,6 +86,8 @@ footer {
     margin-bottom: 8px;
 
     color: var(--text-primary);
+
+    font-family: var(--sortsmill);
 
     font-size:
         clamp(1.6rem, 3vw, 2.5rem);
@@ -215,9 +198,6 @@ footer {
 
 .footer-link:hover {
     transform: translateY(-4px);
-
-    background:
-        rgba(113, 69, 170, 0.22);
 
     border-color:
         var(--purple-light);
